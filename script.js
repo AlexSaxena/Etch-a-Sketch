@@ -11,13 +11,13 @@ let fullRange = c * c;
 addBoxes(c);
 
 //changeColor();
-trailing(fullRange);
+trailing(fullRange, "red");
 
 // Function for Colour trailing over Divs
-function trailing(i) {
+function trailing(i, colour) {
   for (let a = 0; a < i; a++) {
     boxes.item(a).addEventListener("mouseover", () => {
-      boxes.item(a).style.backgroundColor = "red";
+      boxes.item(a).style.backgroundColor = colour;
     });
   }
 }
@@ -29,11 +29,10 @@ btnClear.addEventListener("click", () => {
   }
 });
 
-// function changeColor() {
-//   for (var i = 0; i < boxes.length; i++) {
-//     boxes[i].style.backgroundColor = "black";
-//   }
-// }
+// Btn Event for Erasing colour trail
+btnErase.addEventListener("click", () => {
+  trailing(fullRange, "white");
+});
 
 // Appending Boxes to Container
 function addBoxes(nrOfBoxes) {
