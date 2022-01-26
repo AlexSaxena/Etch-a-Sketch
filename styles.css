@@ -15,11 +15,11 @@ h1 {
 }
 .generatedBox {
   height: 100%;
-  border: solid orange 2px;
+  border: solid black 1px;
   display: flex;
   align-content: stretch;
 }
 .generatedBox2 {
   width: 100px;
-  border: solid blue 2px;
+  border: solid black 1px;
 }
