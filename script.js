@@ -3,6 +3,7 @@ console.log("Greetings, General Kenobi");
 let gridContainer = document.getElementById("grid-container");
 let btnErase = document.getElementById("btn-erase");
 let btnClear = document.getElementById("btn-clear");
+let btnRed = document.getElementById("btn-red");
 let boxes = document.getElementsByClassName("generatedBox2");
 
 let c = 16;
@@ -32,6 +33,11 @@ btnClear.addEventListener("click", () => {
 // Btn Event for Erasing colour trail
 btnErase.addEventListener("click", () => {
   trailing(fullRange, "white");
+});
+
+// Btn Event for trailing colour Red
+btnRed.addEventListener("click", () => {
+  trailing(fullRange, "red");
 });
 
 // Appending Boxes to Container
