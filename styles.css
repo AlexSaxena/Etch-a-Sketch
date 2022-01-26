@@ -13,3 +13,13 @@ h1 {
   flex-direction: column;
   align-content: stretch;
 }
+.generatedBox {
+  height: 100%;
+  border: solid orange 2px;
+  display: flex;
+  align-content: stretch;
+}
+.generatedBox2 {
+  width: 100px;
+  border: solid blue 2px;
+}
