@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+.mainContainer {
+  display: flex;
+  gap: 60px;
+}
+#grid-container {
+  border: solid black 3px;
+  width: 420px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
