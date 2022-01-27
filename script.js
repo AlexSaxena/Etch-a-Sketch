@@ -13,6 +13,14 @@ let fullRange = row * row;
 
 addBoxes(row);
 
+// Checks and changes slider value on movement
+slider.oninput = function () {
+  console.log(slider.value);
+  removeDivChildren();
+  addBoxes(slider.value);
+  sliderOutputValue.innerText = `${slider.value}x${slider.value}`;
+};
+
 //changeColor();
 trailing(fullRange, "red");
 
