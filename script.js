@@ -8,22 +8,6 @@ let boxes = document.getElementsByClassName("generatedBox2");
 let slider = document.getElementById("slider-boxes");
 let sliderOutputValue = document.getElementById("slider-boxes-value");
 
-let row = 8;
-let fullRange = row * row;
-
-addBoxes(row);
-
-// Checks and changes slider value on movement
-slider.oninput = function () {
-  console.log(slider.value);
-  removeDivChildren();
-  addBoxes(slider.value);
-  sliderOutputValue.innerText = `${slider.value}x${slider.value}`;
-};
-
-//changeColor();
-trailing(fullRange, "red");
-
 // Function for Colour trailing over Divs
 function trailing(boxRange, colour) {
   for (let i = 0; i < boxRange; i++) {
@@ -32,6 +16,15 @@ function trailing(boxRange, colour) {
     });
   }
 }
+
+// Checks and changes slider value on movement
+slider.oninput = function () {
+  let row = slider.value;
+  removeDivChildren();
+  addBoxes(row);
+  trailing(boxes.length, "red");
+  sliderOutputValue.innerText = `${row}x${row}`;
+};
 
 // Btn Event to change colour of all boxes to white
 btnClear.addEventListener("click", () => {
@@ -42,21 +35,19 @@ btnClear.addEventListener("click", () => {
 
 // Btn Event for Erasing colour trail
 btnErase.addEventListener("click", () => {
-  trailing(fullRange, "white");
+  trailing(boxes.length, "white");
 });
 
 // Btn Event for trailing colour Red
 btnRed.addEventListener("click", () => {
-  trailing(fullRange, "red");
+  trailing(boxes.length, "red");
 });
 
 // Appending Boxes to Container
 function addBoxes(nrOfBoxes) {
   for (let i = 0; i < nrOfBoxes; i++) {
     let box = newDiv();
-
     gridContainer.appendChild(box);
-
     for (let j = 0; j < nrOfBoxes; j++) {
       let box2 = newDiv2();
       box.appendChild(box2);
