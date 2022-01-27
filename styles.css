@@ -9,13 +9,14 @@ h1 {
   border: solid black 3px;
   width: 420px;
   height: 420px;
+  /* width: 680px;
+  height: 680px; */
   display: flex;
   flex-direction: column;
   align-content: stretch;
 }
 .generatedBox {
   height: 100%;
-  border: solid black 1px;
   display: flex;
   align-content: stretch;
 }
