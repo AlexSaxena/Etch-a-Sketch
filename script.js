@@ -8,15 +8,7 @@ let btnRandomColour = document.getElementById("btn-random-colour");
 let boxes = document.getElementsByClassName("generatedBox2");
 let slider = document.getElementById("slider-boxes");
 let sliderOutputValue = document.getElementById("slider-boxes-value");
-
-// Function for generating random colour
-// https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
-function randomColor() {
-  const randomColor = Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, "0");
-  return "#" + randomColor;
-}
+let btnRainbowRoad = document.getElementById("btn-rainbow-road");
 
 // Function for Colour trailing over Divs
 function trailing(boxRange, colour) {
@@ -48,10 +40,40 @@ btnErase.addEventListener("click", () => {
   trailing(boxes.length, "white");
 });
 
-// Btn Event for trailing colour Red
+// Btn Event for red colour trail
 btnRed.addEventListener("click", () => {
   trailing(boxes.length, "red");
 });
+
+// Btn Event for Random Colour trail
+btnRandomColour.addEventListener("click", () => {
+  trailing(boxes.length, randomColor());
+});
+
+// Btn Event for RainbowRoad Colour trail
+btnRainbowRoad.addEventListener("click", () => {
+  for (let i = 0; i < boxes.length; i++) {
+    boxes.item(i).addEventListener("mouseover", () => {
+      boxes.item(i).style.backgroundColor = randomColor();
+    });
+  }
+});
+
+// Function for generating random colour
+// https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
+function randomColor() {
+  const randomColor = Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, "0");
+  return "#" + randomColor;
+}
+
+// Function for removing all children from gridContainer
+function removeDivChildren() {
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.firstChild);
+  }
+}
 
 // Appending Boxes to Container
 function addBoxes(nrOfBoxes) {
@@ -62,13 +84,6 @@ function addBoxes(nrOfBoxes) {
       let box2 = newDiv2();
       box.appendChild(box2);
     }
-  }
-}
-
-// Function for removing all children from gridContainer
-function removeDivChildren() {
-  while (gridContainer.firstChild) {
-    gridContainer.removeChild(gridContainer.firstChild);
   }
 }
 
