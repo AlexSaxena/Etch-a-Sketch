@@ -5,20 +5,22 @@ let btnErase = document.getElementById("btn-erase");
 let btnClear = document.getElementById("btn-clear");
 let btnRed = document.getElementById("btn-red");
 let boxes = document.getElementsByClassName("generatedBox2");
+let slider = document.getElementById("slider-boxes");
+let sliderOutputValue = document.getElementById("slider-boxes-value");
 
-let c = 16;
-let fullRange = c * c;
+let row = 8;
+let fullRange = row * row;
 
-addBoxes(c);
+addBoxes(row);
 
 //changeColor();
 trailing(fullRange, "red");
 
 // Function for Colour trailing over Divs
-function trailing(i, colour) {
-  for (let a = 0; a < i; a++) {
-    boxes.item(a).addEventListener("mouseover", () => {
-      boxes.item(a).style.backgroundColor = colour;
+function trailing(boxRange, colour) {
+  for (let i = 0; i < boxRange; i++) {
+    boxes.item(i).addEventListener("mouseover", () => {
+      boxes.item(i).style.backgroundColor = colour;
     });
   }
 }
@@ -51,6 +53,13 @@ function addBoxes(nrOfBoxes) {
       let box2 = newDiv2();
       box.appendChild(box2);
     }
+  }
+}
+
+// Function for removing all children from gridContainer
+function removeDivChildren() {
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.firstChild);
   }
 }
 
