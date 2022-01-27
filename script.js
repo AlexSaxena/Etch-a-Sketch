@@ -4,9 +4,19 @@ let gridContainer = document.getElementById("grid-container");
 let btnErase = document.getElementById("btn-erase");
 let btnClear = document.getElementById("btn-clear");
 let btnRed = document.getElementById("btn-red");
+let btnRandomColour = document.getElementById("btn-random-colour");
 let boxes = document.getElementsByClassName("generatedBox2");
 let slider = document.getElementById("slider-boxes");
 let sliderOutputValue = document.getElementById("slider-boxes-value");
+
+// Function for generating random colour
+// https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
+function randomColor() {
+  const randomColor = Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, "0");
+  return "#" + randomColor;
+}
 
 // Function for Colour trailing over Divs
 function trailing(boxRange, colour) {
