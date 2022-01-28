@@ -1,19 +1,31 @@
 h1 {
   text-align: center;
+  text-decoration: underline;
+  margin: 2em;
 }
 .mainContainer {
   display: flex;
+  justify-content: center;
   gap: 60px;
 }
+button,
+input {
+  cursor: pointer;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
 #grid-container {
   border: solid black 3px;
   width: 420px;
   height: 420px;
-  /* width: 680px;
-  height: 680px; */
   display: flex;
   flex-direction: column;
   align-content: stretch;
+  box-shadow: 10px 10px 20px #888888;
 }
 .generatedBox {
   height: 100%;
@@ -23,4 +35,13 @@ h1 {
 .generatedBox2 {
   width: 100%;
   border: solid black 1px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(51, 40, 40);
+  color: white;
+  text-align: center;
 }
