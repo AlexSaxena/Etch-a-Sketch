@@ -12,9 +12,12 @@
     <h1>Etch A Sketch</h1>
     <div class="mainContainer">
       <div class="buttons">
+        <label for="custom-colour">
+          Custom Colour: <input type="color" name="" id="btn-custom-colour" />
+        </label>
+
         <button id="btn-red">Red Colour</button>
-        <input type="color" name="" id="btn-custom-colour" />
-        <button id="btn-random-colour">Random Colour!</button>
+        <button id="btn-random-colour">Random Colour</button>
         <button id="btn-rainbow-road">Rainbow Road</button>
         <button id="btn-erase">Erase</button>
         <button id="btn-clear">Clear</button>
@@ -22,6 +25,9 @@
         <p>Amount of Boxes: <span id="slider-boxes-value"></span></p>
       </div>
       <div id="grid-container"></div>
+    </div>
+    <div class="footer">
+      <p>Made by Alex Saxena</p>
     </div>
   </body>
 </html>
