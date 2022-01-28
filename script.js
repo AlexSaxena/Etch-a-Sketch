@@ -9,6 +9,7 @@ let boxes = document.getElementsByClassName("generatedBox2");
 let slider = document.getElementById("slider-boxes");
 let sliderOutputValue = document.getElementById("slider-boxes-value");
 let btnRainbowRoad = document.getElementById("btn-rainbow-road");
+let btnCustomColour = document.getElementById("btn-custom-colour");
 
 // Function for Colour trailing over Divs
 function trailing(boxRange, colour) {
@@ -57,6 +58,11 @@ btnRainbowRoad.addEventListener("click", () => {
       boxes.item(i).style.backgroundColor = randomColor();
     });
   }
+});
+
+// Function for custom Colour trailing choice
+btnCustomColour.addEventListener("input", () => {
+  trailing(boxes.length, btnCustomColour.value);
 });
 
 // Function for generating random colour
